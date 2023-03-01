@@ -27,3 +27,7 @@ You can refer to this code below for more details
 |                 **Input**                 |            **Output**             |
 | :---------------------------------------: | :-------------------------------: |
 | ![possible-ids](/assets/binary-steps.png) | ![output-1](/assets/output-2.png) |
+
+2. Update Product by ID
+
+3. Create Order
