@@ -10,6 +10,8 @@
 
 ## Algorithm Design
 
+![order-1](/assets/order-1.png)
+
 ### Pseudocode (order flow)
 
 ```
