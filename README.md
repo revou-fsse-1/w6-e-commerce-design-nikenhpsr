@@ -53,4 +53,4 @@ $O(\log_{2} n)$ = $log_{2} 9223372036854775807$ = 63 steps or cycles.
 
 2. Create Order
 
-Time complexity for this step is $O(\log_{2} n)$ because the time will change in linear following the number of product in list.
+Time complexity for this step is $O(n)$ because the time will change in linear following the number of product in list.
