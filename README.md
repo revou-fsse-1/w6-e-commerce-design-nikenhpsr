@@ -2,9 +2,46 @@
 
 ## System Design
 
+### High Level Design
+
+|       **Get Product by ID Flow**        |       **Order Flow**        |
+| :-------------------------------------: | :-------------------------: |
+| ![get-product](/assets/get-product.png) | ![order](/assets/order.png) |
+
 ## Algorithm Design
 
+### Pseudocode (order flow)
+
+```
+const idDatabase;
+const i = productId;
+function getProductByID(id) {
+    for (i in idDatabase) {
+        return productDetails;
+    }
+}
+```
+
+```
+function orderedProduct {
+    const price;
+    const quantity;
+    const listProduct = [];
+    totalPrice = price x quantity;
+
+    if (listProduct != fixed){
+        listProduct--;
+        totalPrice -= -quantity * price;
+    } else {
+        totalPrice will not change;
+    }
+    return totalPrice;
+}
+```
+
 ## Complexity Analysis
+
+### Order Flow
 
 1. Find Suitable Product ID -> Binary Search ($O(\log n)$)
 
@@ -12,30 +49,10 @@ Supposed that Product ID cannot be negative and Database stored in 64-bit hardwa
 
 _64-bit means you have ($2^0$ + $2^1$ + $2^2$ + ... + $2^{63}$) - 1 = 9223372036854775807 possible combinations_
 
-by using C, this is how we calculate it
-
-|                 **Input**                 |            **Output**             |
-| :---------------------------------------: | :-------------------------------: |
-| ![possible-ids](/assets/possible-ids.png) | ![output-1](/assets/output-1.png) |
-
-Assuming that database already ordered, then we can use binary search to find Product Details (_Product ID = Primary Key in Databases_). Because ${n\to\infty}$ we can calculate worse scenario (Big O) for this case which is
+Assuming that database already ordered, then we can use binary search to find Product Details (_Product ID = Primary Key in Databases_). Because ${n\to\infty}$ and the amount of ID are reduce to $\frac{1}{2}^{k}$ for each iteration worse case scenario (Big O) is
 
 $O(\log_{2} n)$ = $log_{2} 9223372036854775807$ = 63 steps or cycles.
 
-You can refer to this code below for more details
+2. Create Order
 
-|                 **Input**                 |            **Output**             |
-| :---------------------------------------: | :-------------------------------: |
-| ![binary-steps](/assets/binary-steps.png) | ![output-2](/assets/output-2.png) |
-
-Example:
-Suppose that we want to search for Product ID = 4719847891641 2147483617 1073741808. You can use the code below to see the result of Cycle 1 & Cycle 2:
-
-|            **Input**            |            **Output**             |
-| :-----------------------------: | :-------------------------------: |
-| ![cycle-1](/assets/cycle-1.png) | ![output-1](/assets/output-3.png) |
-| ![cycle-2](/assets/cycle-2.png) | ![output-4](/assets/output-4.png) |
-
-2. Update Product by ID
-
-3. Create Order
+Time complexity for this step is $O(\log_{2} n)$ because the time will change in linear following the number of product in list.
