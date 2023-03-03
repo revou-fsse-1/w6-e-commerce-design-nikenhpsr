@@ -41,8 +41,6 @@ function orderedProduct {
 
 ## Complexity Analysis
 
-### Order Flow
-
 1. Find Suitable Product ID -> Binary Search ($O(\log n)$)
 
 Supposed that Product ID cannot be negative and Database stored in 64-bit hardware memory. Then we have possible 9 Quintillion Product IDs permutations as stated below:
